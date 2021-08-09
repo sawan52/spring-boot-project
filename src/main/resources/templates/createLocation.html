@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Create Location</title>
@@ -19,7 +17,7 @@ Type:
 <input type="submit" value="save" />
 </pre>
 	</form>
-	${msg}
+	<b th:text="${msg}"></b>
 
 	<br>
 	<a href="displayLoc">View All</a>
