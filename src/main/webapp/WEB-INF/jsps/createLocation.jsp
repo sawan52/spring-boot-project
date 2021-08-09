@@ -21,5 +21,7 @@ Type:
 	</form>
 	${msg}
 
+	<a href="displayLoc">View All</a>
+
 </body>
 </html>
