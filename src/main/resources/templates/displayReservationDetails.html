@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reservation Details:</title>
+</head>
+<body>
+	<h2>Flight Details:</h2>
+
+	<b>Airlines:</b>
+	<span th:text="${reservation.flight.operatingAirlines}"></span>
+	<br />
+	<b>Flight No:</b>
+	<span th:text=" ${reservation.flight.flightNumber}"></span>
+	<br />
+	<b>Departure City:</b>
+	<span th:text="${reservation.flight.departureCity}"></span>
+	<br />
+	<b>Arrival City:</b>
+	<span th:text="${reservation.flight.arrivalCity}"></span>
+	<br />
+	<b>Date Of Departure:</b>
+	<span th:text="${reservation.flight.dateOfDeparture}"></span>
+	<br />
+	<b>Estimate Departure Time:</b>
+	<span th:text="${reservation.flight.estimatedDepartureTime}"></span>
+	<br />
+
+	<h2>Passenger Details:</h2>
+
+	<b>First Name:</b>
+	<span th:text="${reservation.passenger.firstName}"></span>
+	<br />
+	<b>Middle Name:</b>
+	<span th:text="${reservation.passenger.middleName}"></span>
+	<br />
+	<b>Last Name:</b>
+	<span th:text="${reservation.passenger.lastName}"></span>
+	<br />
+	<b>Email:</b>
+	<span th:text="${reservation.passenger.email}"></span>
+	<br />
+	<b>Phone:</b>
+	<span th:text="${reservation.passenger.phone}"></span>
+	<br />
+
+	<form action="completeCheckIn" method="post">
+		Enter the Number Of Bags You want to CheckIn: <input type="text"
+			name="numberOfBags" /> <input type="hidden"
+			th:value="${reservation.id}" name="reservationId" /> <input
+			type="submit" value="Check In" />
+	</form>
+
+</body>
+</html>
