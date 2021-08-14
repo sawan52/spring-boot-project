@@ -25,7 +25,7 @@ public class FlightController {
 
 	@RequestMapping("/findFlights")
 	public String findFlights(@RequestParam("from") String from, @RequestParam("to") String to,
-			@RequestParam("departureDate") @DateTimeFormat(pattern = "dd-MM-yyyy") Date departureDate,
+			@RequestParam("departureDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departureDate,
 			ModelMap modelMap) {
 
 		LOGGER.info("Inside findFlights() From:" + from + " TO:" + to + "Departure Date: " + departureDate);

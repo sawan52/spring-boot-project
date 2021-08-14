@@ -26,7 +26,7 @@ public class ReservationRestController {
 	public Reservation findReservation(@PathVariable("id") Long id) {
 
 		LOGGER.info("Inside findReservation() for id: " + id);
-
+		
 		return reservationRepository.findById(id).get();
 
 	}
