@@ -1,7 +1,5 @@
 package com.sawan.flightcheckin.integration.dto;
 
-import java.sql.Timestamp;
-
 public class Reservation {
 
 	private Long id;
@@ -9,7 +7,6 @@ public class Reservation {
 	private int numberOfBags;
 	private Passenger passenger;
 	private Flight flight;
-	private Timestamp created;
 
 	public Long getId() {
 		return id;
@@ -49,14 +46,6 @@ public class Reservation {
 
 	public void setFlight(Flight flight) {
 		this.flight = flight;
-	}
-
-	public Timestamp getCreated() {
-		return created;
-	}
-
-	public void setCreated(Timestamp created) {
-		this.created = created;
 	}
 
 }

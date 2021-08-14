@@ -17,8 +17,9 @@ public class CheckInControllers {
 	private ReservationRestClient restClient;
 
 	@RequestMapping("/showStartCheckIn")
-	public String showStartCheckIn() {
+	public String showStartCheckin() {
 		return "startCheckIn";
+
 	}
 
 	@RequestMapping("/startCheckIn")
@@ -26,6 +27,7 @@ public class CheckInControllers {
 		Reservation reservation = restClient.findReservation(reservationId);
 		modelMap.addAttribute("reservation", reservation);
 		return "displayReservationDetails";
+
 	}
 
 	@RequestMapping("/completeCheckIn")
@@ -37,6 +39,7 @@ public class CheckInControllers {
 		reservationUpdateRequest.setNumberOfBags(numberOfBags);
 		restClient.updateReservation(reservationUpdateRequest);
 		return "checkInConfirmation";
+
 	}
 
 }
