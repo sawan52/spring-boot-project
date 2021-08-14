@@ -1,7 +1,5 @@
 package com.sawan.flightreservation.entities;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -14,7 +12,6 @@ public class Reservation extends AbstractEntity {
 	private Passenger passenger;
 	@OneToOne
 	private Flight flight;
-	private Timestamp created;
 
 	public Boolean getCheckedIn() {
 		return checkedIn;
@@ -48,12 +45,10 @@ public class Reservation extends AbstractEntity {
 		this.flight = flight;
 	}
 
-	public Timestamp getCreated() {
-		return created;
-	}
-
-	public void setCreated(Timestamp created) {
-		this.created = created;
+	@Override
+	public String toString() {
+		return "Reservation [checkedIn=" + checkedIn + ", numberOfBags=" + numberOfBags + ", passenger=" + passenger
+				+ ", flight=" + flight + "]";
 	}
 
 }
