@@ -1,21 +1,22 @@
 package com.sawan.flightreservation.controllers;
 
-import java.util.Date;
-import java.util.List;
-
+import com.sawan.flightreservation.entities.Flight;
+import com.sawan.flightreservation.repos.FlightRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sawan.flightreservation.entities.Flight;
-import com.sawan.flightreservation.repos.FlightRepository;
+import java.util.Date;
+import java.util.List;
 
 @Controller
+@CrossOrigin("*")
 public class FlightController {
 
 	@Autowired

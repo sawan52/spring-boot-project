@@ -14,7 +14,7 @@ import com.sawan.flightreservation.entities.Reservation;
 import com.sawan.flightreservation.repos.ReservationRepository;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 public class ReservationRestController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReservationRestController.class);
@@ -26,7 +26,7 @@ public class ReservationRestController {
 	public Reservation findReservation(@PathVariable("id") Long id) {
 
 		LOGGER.info("Inside findReservation() for id: " + id);
-		
+
 		return reservationRepository.findById(id).get();
 
 	}
