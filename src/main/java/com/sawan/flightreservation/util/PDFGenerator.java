@@ -1,19 +1,18 @@
 package com.sawan.flightreservation.util;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
-import com.sawan.flightreservation.entities.Reservation;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.sawan.flightreservation.entities.Reservation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 @Component
 public class PDFGenerator {
@@ -40,11 +39,11 @@ public class PDFGenerator {
 		PdfPTable table = new PdfPTable(2);
 		PdfPCell cell;
 
-		cell = new PdfPCell(new Phrase("Flight Itinerary"));
+		cell = new PdfPCell(new Phrase("Flight Itinerary:"));
 		cell.setColspan(2);
 		table.addCell(cell);
 
-		cell = new PdfPCell(new Phrase("Flight Details"));
+		cell = new PdfPCell(new Phrase("Flight Details:"));
 		cell.setColspan(2);
 		table.addCell(cell);
 
@@ -66,7 +65,7 @@ public class PDFGenerator {
 		table.addCell("Departure Time");
 		table.addCell(reservation.getFlight().getEstimatedDepartureTime().toString());
 
-		cell = new PdfPCell(new Phrase("Passenger Details"));
+		cell = new PdfPCell(new Phrase("Passenger Details:"));
 		cell.setColspan(2);
 		table.addCell(cell);
 
